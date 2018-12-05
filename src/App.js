@@ -2,43 +2,44 @@ import React, { Component } from 'react';
 import './App.css';
 import { Route, Switch, Link } from "react-router-dom";
 
-import AllMovies from "./components/AllMovies";
-import MovieDetail from "./components/MovieDetail";
+import AllShows from "./components/AllMovies";
+import ShowDetail from "./components/ShowDetail";
 import NotFound from "./components/NotFound";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      movies: {}
+      shows: []
     }
   }
 
   componentDidMount = () => {
-    fetch('http://api.tvmaze.com/schedule/full')
+    fetch('http://api.tvmaze.com/schedule')
       .then(r => r.json())
       .then(this.parseMovies);
   }
 
   parseMovies = (data) => {
     this.setState({
-      movies: data
+      shows: data
     });
   }
 
   render() {
-    const { movies } = this.state;
+    const { shows } = this.state;
+    
     return (
       <div className="App">
         <header>
           <Link to="/"><h1>TV Bland</h1></Link>
         </header>
         <Switch>
-          <Route path="/" exact render={() => <AllMovies movies={movies} />} />
+          <Route path="/" exact render={() => <AllShows shows={shows} />} />
 
-          <Route path="/movie/:id" render={({ match }) => {
-              const id = match.params.id;
-              return movies[id] ? <MovieDetail movie={movies[id]} id={id} /> : <NotFound />;
+          <Route path="/show/:id" render={({ match }) => {
+              const showId = match.params.id;
+              return <ShowDetail showId={showId} />;
             }} />
 
           <Route component={NotFound} />

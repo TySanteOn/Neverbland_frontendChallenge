@@ -1,24 +1,21 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-import { Link } from "react-router-dom";
+import ShowListItem from "./ShowListItem"
 
 
-const AllMovies = ({movies}) => {
-
-  return <section className="movies">
-    <ul className="movies-list">
-        {Object.keys(movies).map(id => <li className="movie" key={id}>
-            <Link className="movie-link" to={`/movies/${id}`}>
-              {movies[id].name}
-            </Link>
-          </li>)}
+const AllShows = ({shows}) => {
+  console.log(shows);
+  
+  return <section className="shows">
+    <ul className="shows-list">
+      {Object.keys(shows).map(id => <ShowListItem key={id} id={id} episode={shows[id]} />)}
       </ul>
   </section>;
 }
 
-AllMovies.propTypes = {
-  movies: propTypes.object.isRequired
+AllShows.propTypes = {
+  shows: propTypes.array.isRequired
 };
 
-export default AllMovies;
+export default AllShows;
