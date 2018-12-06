@@ -1,20 +1,90 @@
 .App {
-  /* background-color: var(--dark); */
+  background: linear-gradient(var(--color1) 0%, var(--color1) 50%, var(--light) 50%, var(--light) 100%);
+  height: 100vh;
+  background-repeat: no-repeat;
+  padding: 10rem;
   /* text-align: center; */
 }
 
-.App-header {
-  /* min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white; */
+h1 {
+  font: bold 4.8rem sans-serif;
+  color: var(--light);
+  margin-left: 1rem;
 }
 
 svg {
   width: 0;
   height: 0;
   position: absolute;
+}
+
+.introduction {
+  margin: 5rem 0 10rem;
+  width: 50vw;
+  color: var(--light);
+}
+
+.introduction p {
+  margin-left: 1rem;
+}
+
+h2 {
+  font-size: 3rem;
+  color: var(--light);
+  text-transform: uppercase;
+  margin-left: 1rem;
+}
+
+h3 {
+  font-size: 2.4rem;
+  color: var(--light);
+  margin: 0 0 2rem 1rem;
+}
+
+.shows-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+}
+
+.shows-list li {
+  width: 15vw;
+  /* margin-bottom: 3rem; */
+  margin: 0 1rem 3rem;
+}
+
+.show-link {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  filter: saturate(.5);
+}
+
+.show-link:hover {
+  filter: saturate(1);
+}
+
+.show-cover {
+  width: 15vw;
+}
+
+h4 {
+  font-size: 1.8rem;
+}
+
+.rating {
+  position: relative;
+  margin-top: 1rem;
+}
+
+.star-ratings {
+  position: absolute;
+  top: -1rem;
+}
+
+.not-rated {
+  font-size: 1rem;
+  opacity: .6;
+  margin-top: .5rem;
 }

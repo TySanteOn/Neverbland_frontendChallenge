@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import propTypes from 'prop-types';
 import NotFound from "./NotFound";
+import PrimaryInfo from "./PrimaryInfo";
 
 class ShowDetail extends Component {
   constructor({ showId }) {
@@ -23,9 +24,10 @@ class ShowDetail extends Component {
 
   render() {
     const { show } = this.state;
+    
     if (show.length !== null) {
-      return <section className="movie">
-          <h2>{show.name}</h2>
+      return <section className="showDetail">
+          <PrimaryInfo show={show} />
         </section>;
     } else {
       return NotFound;

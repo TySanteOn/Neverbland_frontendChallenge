@@ -7,11 +7,11 @@ import Rating from "./Rating";
 const ShowsListItem = ({ episode }) => {
   
   return <li>
-      <article className="episode">
-        <Link className="episode-link" to={`/show/${episode.show.id}`}>
-          <h3>{episode.show.name}</h3>
+      <article className="show">
+        <Link className="show-link" to={`/show/${episode.show.id}`}>
+          <h4>{episode.show.name}</h4>
           <Rating rating={episode.show.rating.average} />
-          <img src={episode.show.image.medium} alt="showImage"/>
+          <img src={episode.show.image.medium} className="show-cover" alt="showImage" width=""/>
         </Link>
       </article>
     </li>;

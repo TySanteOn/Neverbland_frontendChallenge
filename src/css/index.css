@@ -1,9 +1,15 @@
 @import './reset.css';
 @import './root.css';
 
-body {
+html {
+  font-size: 62.5%;
   margin: 0;
   padding: 0;
+}
+
+body {
+  font-size: 1.8rem;
+  line-height: 1.5;
   font-family: 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

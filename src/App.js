@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import './css/App.css';
 import { Route, Switch, Link } from "react-router-dom";
 
-import AllShows from "./components/AllMovies";
 import ShowDetail from "./components/ShowDetail";
 import NotFound from "./components/NotFound";
+import Intro from "./components/Intro";
 
 class App extends Component {
   constructor() {
@@ -35,7 +35,7 @@ class App extends Component {
           <Link to="/"><h1>TV Bland</h1></Link>
         </header>
         <Switch>
-          <Route path="/" exact render={() => <AllShows shows={shows} />} />
+          <Route path="/" exact render={() => <Intro shows={shows} />} />
 
           <Route path="/show/:id" render={({ match }) => {
               const showId = match.params.id;
