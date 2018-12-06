@@ -5,7 +5,6 @@ import ShowListItem from "./ShowListItem"
 
 
 const AllShows = ({shows}) => {
-  console.log(shows);
   
   return <section className="shows">
     <ul className="shows-list">

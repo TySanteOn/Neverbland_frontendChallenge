@@ -14,7 +14,7 @@ exports.extractCSS = () => {
             'css-loader',
             'postcss-loader'
           ],
-          publicPath: '../'
+          publicPath: '../css/'
         })
       }]
     }

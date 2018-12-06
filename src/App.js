@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './css/App.css';
 import { Route, Switch, Link } from "react-router-dom";
 
 import AllShows from "./components/AllMovies";
@@ -15,7 +15,7 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    fetch('http://api.tvmaze.com/schedule')
+    fetch('http://api.tvmaze.com/schedule/')
       .then(r => r.json())
       .then(this.parseMovies);
   }
