@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import propTypes from 'prop-types';
 import NotFound from "./NotFound";
 import PrimaryInfo from "./PrimaryInfo";
+import ShowInfo from "./ShowInfo";
+import Cast from "./Cast";
 
 class ShowDetail extends Component {
   constructor({ showId }) {
@@ -28,6 +30,10 @@ class ShowDetail extends Component {
     if (show.length !== null) {
       return <section className="showDetail">
           <PrimaryInfo show={show} />
+          <div className="extraInfo">
+            <ShowInfo show={show} />
+            <Cast show={show} />
+          </div>
         </section>;
     } else {
       return NotFound;
