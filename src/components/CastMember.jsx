@@ -4,14 +4,13 @@ import propTypes from "prop-types";
 
 
 const CastMember = ({ member }) => {
-  console.log(member);
 
   let image;
 
   if (!member.person.image){
-    image = '';
+    image = '../empty-image.jpg';
   } else {
-    image = member.person.image;
+    image = member.person.image.medium;
   }
 
   return <div className="row extra-info-list cast-member">
@@ -19,7 +18,7 @@ const CastMember = ({ member }) => {
       <dd>{member.person.name}</dd>
       <dt>{member.character.name}</dt>
     </div>
-    <img src={image.medium} alt="" width="50" height="50" object-fit="cover" />
+    <img src={image} alt="" width="50" height="50" object-fit="cover" />
   </div>;
 
 }

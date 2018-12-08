@@ -5,7 +5,6 @@ import CastMember from './CastMember';
 
 
 const Cast = ({cast}) => {
-  console.log(cast);
   let members = [];
 
   if (cast.length > 5) {
@@ -27,7 +26,7 @@ const Cast = ({cast}) => {
       </dl>
     </article>;
   }
-  return 'hi';
+  return <p>no cast known</p>;
 }
 
 Cast.propTypes = {

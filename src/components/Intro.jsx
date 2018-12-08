@@ -5,7 +5,6 @@ import AllShows from "./AllShows";
 
 
 const Intro = ({shows}) => {
-  console.log(shows);
   
   return <section className="home">
       <header className="introduction">

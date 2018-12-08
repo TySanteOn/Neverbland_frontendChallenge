@@ -12,9 +12,9 @@ const PrimaryInfo = ({show}) => {
   }
 
   const outOfFiveOnScreen = () => {
-    const $rating = ratingCheck();
+    const $rating = ratingCheck() / 2;
     
-    if ($rating !== null) {
+    if ($rating !== 0) {
       return `${$rating}/5`;
     }
     return;

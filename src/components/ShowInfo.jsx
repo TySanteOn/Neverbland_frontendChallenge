@@ -23,8 +23,6 @@ const ShowInfo = ({show}) => {
     
   };
 
-  console.log(show);
-
   if (show.network && show.schedule && show.status && show.genres) {
 
     return <article className="show-info">
