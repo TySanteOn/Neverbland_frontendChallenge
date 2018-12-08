@@ -5,6 +5,8 @@ import AllShows from "./AllShows";
 
 
 const Intro = ({shows}) => {
+  console.log(shows);
+  
   return <section className="home">
       <header className="introduction">
         <h2>TV Show and web series database.</h2>

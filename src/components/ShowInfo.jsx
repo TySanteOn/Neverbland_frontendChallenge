@@ -32,19 +32,19 @@ const ShowInfo = ({show}) => {
           <h4>Show Info</h4>
         </header>
         <dl nowrap="true">
-          <div className="row show-info-list">
+          <div className="row extra-info-list">
             <dd>Streamed on</dd>
             <dt>{show.network.name}</dt>
           </div>
-          <div className="row show-info-list">
+          <div className="row extra-info-list">
             <dd>Schedule</dd>
             <dt>{lister(show.schedule.days)}</dt>
           </div>
-          <div className="row show-info-list">
+          <div className="row extra-info-list">
             <dd>Status</dd>
             <dt>{show.status}</dt>
           </div>
-          <div className="row show-info-list">
+          <div className="row extra-info-list">
             <dd>Genres</dd>
             <dt>{lister(show.genres)}</dt>
           </div>

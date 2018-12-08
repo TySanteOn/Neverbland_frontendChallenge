@@ -40,8 +40,8 @@ const PrimaryInfo = ({show}) => {
   return <header className="info-header row">
       <div className="info-div">
         <div>
-        <h3>{show.name}</h3>
-        <div className="preview-div" dangerouslySetInnerHTML={createMarkup()}></div>
+          <h3>{show.name}</h3>
+          <div className="preview-div" dangerouslySetInnerHTML={createMarkup()}></div>
         </div>
         <div className="row">
           <Rating rating={ratingCheck()} color={color} />

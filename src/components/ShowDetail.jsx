@@ -10,7 +10,8 @@ class ShowDetail extends Component {
     super();
     this.state = {
       showId: showId,
-      show: {}
+      show: {},
+      cast: []
     }
   }
 
@@ -22,21 +23,29 @@ class ShowDetail extends Component {
 
   parseShowData = data => {
     this.setState({ show: data });
+
+    fetch(`http://api.tvmaze.com/shows/${this.state.showId}/cast`)
+      .then(r => r.json())
+      .then(this.parseShowCastData);
+  };
+
+  parseShowCastData = data => {
+    this.setState({ cast: data });
   };
 
   render() {
-    const { show } = this.state;
+    const { show, cast } = this.state;
     
-    if (show.length !== null) {
-      return <section className="showDetail">
+    if (show.name !== "Not Found") {
+      return <section className="show-detail">
           <PrimaryInfo show={show} />
-          <div className="extraInfo">
+          <div className="extra-info row">
             <ShowInfo show={show} />
-            <Cast show={show} />
+            <Cast cast={cast} />
           </div>
         </section>;
     } else {
-      return NotFound;
+      return <NotFound />;
     }
   };
 }

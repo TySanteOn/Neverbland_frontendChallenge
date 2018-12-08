@@ -80,7 +80,6 @@ h4 {
 .rating {
   position: relative;
   margin-top: 1rem;
-  margin-right: 2rem;
 }
 
 .star-ratings {
@@ -97,12 +96,13 @@ h4 {
 .info-header {
   color: var(--light);
   flex-direction: row-reverse;
-  justify-content: space-between;
+  justify-content: flex-end;
   margin-bottom: 10rem;
 }
 
 .info-header img {
-  width: 25vw;
+  height: 40rem;
+  width: auto;
   margin-right: 2rem;
 }
 
@@ -113,6 +113,24 @@ h4 {
   width: 50vw;
 }
 
+.extra-info {
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.extra-info h4 {
+  margin-bottom: 4rem;
+}
+
+.extra-info article {
+  width: 38vw;
+  min-width: 38rem;
+}
+
+.show-info {
+  margin: 0 4rem 5rem 0;
+}
+
 .info-div {
   display: flex;
   flex-direction: column-reverse;
@@ -120,17 +138,41 @@ h4 {
   justify-content: center;
 }
 
-.show-info {
-  width: 40vw;
+.info-div .rating {
+  margin-right: 3rem;
+  margin-top: 0;
 }
 
-.show-info-list {
+.info-div p {
+  margin-top: .3rem;
+}
+
+.preview-div p {
+  margin: 0;
+}
+
+.extra-info-list {
   justify-content: space-between;
   border-bottom: solid .2rem var(--color1);
-  /* padding-bottom: 1rem; */
   padding: 0 1rem 1rem;
   margin-bottom: 2rem;
   font-size: 1.4rem;
+}
+
+.cast-member {
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.cast-member div {
+  width: 30vw;
+  min-width: 30rem;
+  justify-content: space-between;
+}
+
+.cast-member img {
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 /* justify-content: space-between; */

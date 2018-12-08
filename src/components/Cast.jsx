@@ -1,16 +1,37 @@
 import React from 'react';
 
 import propTypes from "prop-types";
+import CastMember from './CastMember';
 
 
+const Cast = ({cast}) => {
+  console.log(cast);
+  let members = [];
 
-const Cast = ({show}) => {
+  if (cast.length > 5) {
+    for (let i = 0; i < 5; i++) {
+      const random = Math.floor((Math.random(0) * (cast.length - 1)));
+      members.push(cast[random]);
+    }
+  } else {
+    members = cast;
+  }
 
-  return <p>hi</p>;
+  if (cast.length !== 0) {
+    return <article className="show-cast">
+      <header>
+        <h4>Starring</h4>
+      </header>
+      <dl nowrap="true">
+        {members.map((member, index) => <CastMember key={index} member={member} />)}
+      </dl>
+    </article>;
+  }
+  return 'hi';
 }
 
 Cast.propTypes = {
-  show: propTypes.object.isRequired
+  cast: propTypes.array.isRequired
 };
 
 export default Cast;
